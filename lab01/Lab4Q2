@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] strings = { "hello", "and", "welcome", "to", "this", "Task!" };
+
+        string mergedString = Merger(strings);
+
+        Console.WriteLine(mergedString);
+    }
+
+    static string Merger(string[] strings)
+    {
+        string mergedString = "";
+
+        foreach (string str in strings)
+        {
+            mergedString += str + " ";
+        }
+
+        return mergedString.Trim();
+    }
+}
