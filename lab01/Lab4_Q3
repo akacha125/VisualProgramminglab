@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        string inputString = "This is a sample sentence with words of different lengths.";
+
+        string[] extractedWords = ExtractWords(inputString);
+
+        foreach (string word in extractedWords)
+        {
+            Console.WriteLine(word);
+        }
+    }
+
+    static string[] ExtractWords(string inputString)
+    {
+        string[] words = inputString.Split(' ');
+
+        List<string> extractedWordsList = new List<string>();
+
+        foreach (string word in words)
+        {
+            
+            if (word.Length >= 4 && word.Length <= 5)
+            {
+              
+                if (ContainsVowels(word))
+                {
+                    extractedWordsList.Add(word);
+                }
+            }
+        }
+
+        return extractedWordsList.ToArray();
+    }
+
+    static bool ContainsVowels(string word)
+    {
+        
+        return word.Any(char.IsLower);
+    }
+}
